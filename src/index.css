@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Copse&family=Cossette+Titre:wght@400;700&family=Inconsolata:wght@200..900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Copse", serif, sans-serif;
+  --font-display: "Cossette Titre", "Copse", serif;
+  --font-mono: "Inconsolata", monospace;
+  --color-electric-blue: #2563EB; /* Matching design HTML blue-600 / blue-500 */
+  --color-electric-purple: #9333EA; /* Matching design HTML purple-600 */
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    background-color: #050505;
+    color: #ffffff;
+    overflow-x: hidden;
+  }
+  
+  body {
+    font-family: var(--font-sans);
+    background-color: #050505;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: #050505;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #141414;
+    border-radius: 9999px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: #2563eb;
+  }
+
+  /* Text Reveal Animations & Custom Elements */
+  ::selection {
+    background: rgba(37, 99, 235, 0.3);
+    color: #ffffff;
+  }
+}
+
+/* Background Grids and Elements */
+.ambient-grid {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.01) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.01) 1px, transparent 1px);
+}
+
+.ambient-glow {
+  filter: blur(140px);
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* Glassmorphism Styles matching the design theme exactly */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.glass-panel-hover:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(37, 99, 235, 0.35);
+  box-shadow: 0 0 35px rgba(37, 99, 235, 0.12);
+}
+
+/* Animated Borders for Hover states */
+@keyframes border-pulse {
+  0%, 100% { border-color: rgba(147, 51, 234, 0.15); }
+  50% { border-color: rgba(37, 99, 235, 0.5); }
+}
+
+.pulse-border:hover {
+  animation: border-pulse 2s infinite ease-in-out;
+}
+
+/* Text glow styles */
+.text-glow-blue {
+  text-shadow: 0 0 20px rgba(37, 99, 235, 0.4);
+}
+
+.text-glow-purple {
+  text-shadow: 0 0 20px rgba(147, 51, 234, 0.4);
+}
+
+/* Modern styling tweaks */
+.custom-cursor {
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
