@@ -133,7 +133,7 @@ export default function Hero() {
         {/* Terminal Accent Badge */}
         <div 
           ref={(el) => { if(el) fadeUpRef.current[0] = el; }}
-          className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/[0.03] border border-white/5 shadow-inner text-xs font-mono tracking-wider text-neutral-400 mb-8"
+          className="flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/3 border border-white/5 shadow-inner text-xs font-mono tracking-wider text-neutral-400 mb-8"
         >
           <Terminal className="text-blue-500 w-3.5 h-3.5 animate-pulse" />
           <span>PORTFOLIO_ENGINE_INIT // VERSION_2026</span>
@@ -149,7 +149,7 @@ export default function Hero() {
                   <span
                     key={letterIndex}
                     ref={(el) => { titleLettersRef.current[absoluteIndex] = el; }}
-                    className="inline-block origin-bottom transform-gpu bg-gradient-to-br from-white via-white to-gray-500 bg-clip-text text-transparent"
+                    className="inline-block origin-bottom transform-gpu bg-linear-to-br from-white via-white to-gray-500 bg-clip-text text-transparent"
                   >
                     {letter}
                   </span>
@@ -162,7 +162,7 @@ export default function Hero() {
         {/* Dynamic Interactive Typewriter Roles Subtitle */}
         <div 
           ref={(el) => { if (el) fadeUpRef.current[1] = el; }}
-          className="h-8 mb-6 flex items-center justify-center font-mono text-sm md:text-xl font-semibold bg-clip-text text-transparent bg-gradient-to-r from-blue-500 via-violet-300 to-purple-500 tracking-wide"
+          className="h-8 mb-6 flex items-center justify-center font-mono text-sm md:text-xl font-semibold bg-clip-text text-transparent bg-linear-to-r from-blue-500 via-violet-300 to-purple-500 tracking-wide"
         >
           <span>{typedText}</span>
           <span className="w-1.5 h-5 bg-blue-500 ml-1 animate-ping" />
